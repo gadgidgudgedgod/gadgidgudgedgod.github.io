@@ -1,0 +1,203 @@
+body {
+    font-family:  Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+
+}
+
+.header {
+    background-color:purple;
+    padding: 10px;
+    text-align: center;
+    color: blanchedalmond;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+.navigationbar {
+    background-color: greenyellow;
+    text-align: center;
+    padding: 20px;
+}
+
+.navigationbar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.navigationbar a:hover {
+    background-color: black;
+    color: white
+}
+
+.content {
+    background-color: burlywood;
+    padding: 15px;
+
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+.footer {
+    background-color: palevioletred;
+    padding: 15px;
+    text-align: center;
+    font-size: small;
+}
+
+.dropdown {
+    display: inline-block;
+    position: absolute;
+}
+
+.dropdown-button {
+    background-color: greenyellow;
+    color: black;
+    border: 0;
+    font-size: large;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: pink;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 12px;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: palevioletred;
+    color: black;
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media only screen and (max-width: 700px) {
+    .navigationbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        width: 100px;
+        height: 30px;
+        background-color: black;
+        padding: 5px;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .content {
+        display: block;
+        padding: 15px;
+    }
+
+    .dropdown {
+        display: block;
+        text-align: center;
+    }
+
+    .menu-button {
+        background-color: purple;
+        color: pink;
+        border: 0;
+        font-size: large;
+        padding: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+    }
+}
+
+@keyframes menu-button {
+    from { width: 0px; }
+    to { width: 130px; }
+}
+
+.navigationbar a::after {
+    content: "";
+    background-color: yellowgreen;
+    width: 0px;
+    height: 4px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    z-index: -1;
+    transition: width 1.5s ease;
+}
+
+.navigationbar a:hover::after {
+    width: 100%;
+}
+
+.dropdown-button {
+    background-color: purple;
+    color: aliceblue;
+    padding: 10px 20px;
+    border: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: purple;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 15px;
+    display: block;
+    transition: background-color 1.5s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: purple;
+    color: blanchedalmond;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: pink;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(5, 5, 5, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navigationbar a:hover {
+    animation: menu-button 1.5s forwards;
+}
